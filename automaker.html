@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<title>Your New Car</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="nothing">
+<meta name="description" content="It's pretty exciting stuff.">
+
+<p id="auto">You don't have a fake car. But you need one.</p>
+<button id="newCar" onclick="getCar()">Buy a fake car today!</button>
+
+<script>
+function getRandomIntInclusive(min, max) {
+	min = Math.ceil(min);
+	max = Math.floor(max);
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function getYear() {
+    return getRandomIntInclusive(2010, 2018);
+}
+function getMake() {
+	var makes = ["Acura", "Alfa Romeo", "Aston Martin", "Audi", "Bentley", "BMW", "Bugatti", "Buick", "Cadillac", "Chevrolet", "Chrysler", "Dodge", "Ferrari", "Fiat", "Ford", "GMC", "Honda", "Hyundai", "Infiniti", "Jaguar", "Jeep", "Kia", "Lamborghini", "Land Rover", "Lexus", "Lincoln", "Maserati", "Mazda", "McLaren", "Mercedes-Benz", "Mini", "Mitsubishi", "Nissan", "Peugeot", "Porsche", "Renault", "Rolls Royce", "Saab", "Subaru", "Suzuki", "Tata", "Tesla", "Toyota", "Volkswagen", "Volvo"];
+    return makes[getRandomIntInclusive(0, makes.length-1)];
+}
+function getModel() {
+	var models = ["Aggravate", "Ain't", "Arrogant", "Atrocity", "Authoritarianism", "Aversion", "Balk", "Bicker", "Bogus", "Bumble", "Bunion", "Burnt", "Capsize", "Carrion", "Claustrophobia", "Clumsy", "Complain", "Congestion", "Cuss", "Dank", "Decrepit", "Defraud", "Delusion", "Deprecated", "Despot", "Diminish", "Discharge", "Doubt", "Dunce", "Dysentery", "Effigy", "Emission", "Enslave", "Failure", "Falsehood", "Famine", "Fatigue", "Felony", "Forbade", "Forgot", "Frustration", "Fumble", "Grim", "Grumble", "Grumpy", "Halt", "Hamper", "Hassle", "Hinder", "Illness", "Impaired", "Inefficiently", "Inhibit", "Iniquity", "Instability", "Ipecac", "Junkyard", "Junkpile", "Kleptomania", "Laceration", "Lowly", "Lumbering", "Moan", "Mucus", "Munchies", "Mussolini","Nitpick", "Nothing", "Null", "Oligopoly", "Oops", "Otorhinolaryngologist", "Outage","Penalty", "Perishable", "Pileup", "Plagiarism", "Poultry", "Pretend", "Puncture", "Putrid", "Quoth", "Rancid", "Rollover", "Rummage", "Saddam", "Salvage", "Scandal", "Slander", "Slugs", "Sobriety", "Squashed", "Stalin", "Stigma", "Stressed", "Stuck", "Stymie", "Theft", "Thwart", "Tumped", "Typewriter", "Um", "Unwieldy", "Vermin", "Without", "Xenophobia", "Yips", "Zilch"];
+    return models[getRandomIntInclusive(0, models.length-1)];
+}
+function getTrimLine() {
+	var trimLines = ["CE", "DL", "DX", "EX", "FL", "GL", "GLE", "GT", "L", "LE", "Limited", "LS", "LT", "LTD", "LTZ", "LX", "SE", "SL", "SLE", "SLT", "Sport", "SV", "Touring", "XLE", "XLT"];
+	return trimLines[getRandomIntInclusive(0, trimLines.length-1)];
+}
+function getExclamation() {
+	var exclamations = ["Cool!", "Awesome!", "Neat.", "Nice!", "Congratulations!", "Superb.", "Groovy.", "The best car on the lot."];
+	return exclamations[getRandomIntInclusive(0, exclamations.length-1)];
+}
+
+function getCar() {
+	document.getElementById("auto").innerHTML = "You now own a <strong>" + getYear() + " " + getMake() + " " + getModel() + " " + getTrimLine() + "</strong>. " + getExclamation();
+	document.getElementById("newCar").innerHTML = "Want to buy another fake car?";
+	return 0;
+}
+</script>
+
+</body>
+</html>
